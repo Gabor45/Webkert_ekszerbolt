@@ -1,0 +1,24 @@
+<div class="bal">
+  <h1 class="cim" appHomePageDirective>PepeWelery</h1>
+</div>
+<div class="jobb">
+  <form class="form__group" (ngSubmit)="onLoginPressed()">
+    <div *ngIf="username.dirty" class="form-errors">
+      <p *ngIf="username.hasError('required')">Az felhasználónév megadása kötelező</p>
+    </div>
+    <input class="form__input" type="email" name="username" placeholder="Felhasználónév" [formControl]="username">
+
+    <div *ngIf="password.dirty" class="form-errors">
+      <p *ngIf="password.hasError('required')">A jelszó megadása kötelező</p>
+    </div>
+    <input class="form__input" type="password" name="password" placeholder="Jelszó" [formControl]="password">
+
+    <div *ngIf="errorMessage" class="form-errors">
+      <p>{{ errorMessage }}</p>
+    </div>
+  </form>
+  <button class="custom-button" mat-raised-button>Bejelentkezés</button>
+  <button mat-raised-button>Regisztráció</button>
+</div>
+
+
