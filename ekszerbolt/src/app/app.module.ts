@@ -10,6 +10,8 @@ import { HomePageDirectiveDirective } from './home-page-directive.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { RegisterPageDirectiveDirective } from './register-page-directive.directive';
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -17,15 +19,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     RegisterPageComponent,
     HomePageComponent,
     HomePageDirectiveDirective,
+    RegisterPageDirectiveDirective,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatFormFieldModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule
+    ],
   providers: [
     provideClientHydration(),
     provideAnimationsAsync()

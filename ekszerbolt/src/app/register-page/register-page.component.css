@@ -1,0 +1,51 @@
+.bal {
+  margin-right: 50%;
+  width: 50vw;
+  height: 100vh;
+  float: left;
+  background-color: white;
+}
+.jobb{
+  position: absolute;
+  float: right;
+  margin-left: 50%;
+  width: 50vw;
+  height: 100vh;
+  background: black url("../../assets/Images/PepeGentleman.png") no-repeat 0vw 15vh;
+  background-size: 100%;
+}
+.cim{
+  font-size:5vw;
+  font-family: Bebas, serif;
+  text-align: center;
+  color: white;
+}
+mat-form-field{
+  display: block;
+  margin-bottom: 2vh;
+  margin-left: 17.5vw;
+  height: 2%;
+  width: 15vw;
+}
+.reg{
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  font-size: 2vw;
+}
+mat-label{
+  font-size: 1vw;
+}
+button{
+  margin-top: 2vh;
+  font-weight: bold;
+  display: block;
+  margin-left: 17.5vw;
+  width: 15vw;
+  height: 4vh;
+  margin-bottom: 2vh;
+  font-size: 1vw;
+}
+input::placeholder {
+  font-size:1vw;
+}

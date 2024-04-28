@@ -1,5 +1,5 @@
 .bal {
-  margin-right: 50%;
+  margin-right: 50vw;
   width: 50vw;
   height: 100vh;
   float: left;
@@ -10,7 +10,7 @@
   background-color: black;
   position: absolute;
   float: right;
-  margin-left: 50%;
+  margin-left: 50vw;
   width: 50vw;
   height: 100vh;
   color: #578e39;
@@ -26,6 +26,7 @@ button {
   margin-bottom: 2vh;
   margin-left: 50vh;
   width: 8vw;
+  font-size: 0.8vw;
 }
 p{
   display: block;
@@ -35,6 +36,8 @@ input{
   display: block;
   margin-bottom: 5vh;
   margin-left: 45vh;
+  width: 5vw;
+  height: 2vh;
 }
 .form__group{
   margin-top: 30vh;
@@ -47,6 +50,7 @@ input{
   display: block;
   transition: all 0.3s;
   transform: translateY(0rem);
+  height: 1vh;
 }
 
 .form__input {
@@ -64,6 +68,7 @@ input{
 }
 ::placeholder {
   color: black;
+  font-size:1vw;
 }
 
 

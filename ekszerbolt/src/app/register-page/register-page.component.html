@@ -1,1 +1,41 @@
-<p>register-page works!</p>
+<div class="bal">
+      <h1 class="reg">REGISZTRÁCIÓ</h1>
+  <form (ngSubmit)="onRegisterPressed()" class="register-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Teljes név</mat-label>
+      <input matInput placeholder="Teljes név" formControlName="fullname">
+      <mat-error *ngIf="fullname.hasError('required')">A teljes név megadása kötelező</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Felhasználónév</mat-label>
+      <input matInput placeholder="Felhasználónév" formControlName="username">
+      <mat-error *ngIf="username.hasError('required')">A felhasználónév megadása kötelező</mat-error>
+      <mat-error *ngIf="username.hasError('exists')">Ez a felhasználónév foglalt.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Jelszó</mat-label>
+      <input matInput type="password" placeholder="Jelszó" formControlName="password">
+      <mat-error *ngIf="password.hasError('required')">A jelszó megadása kötelező</mat-error>
+      <mat-error *ngIf="password.hasError('lowerCase')">A jelszónak tartalmaznia kell legalább egy kisbetűt</mat-error>
+      <mat-error *ngIf="password.hasError('upperCase')">A jelszónak tartalmaznia kell legalább egy nagybetűt</mat-error>
+      <mat-error *ngIf="password.hasError('number')">A jelszónak tartalmaznia kell legalább egy számot</mat-error>
+      <mat-error *ngIf="password.hasError('specialChar')">A jelszónak tartalmaznia kell legalább egy speciális karaktert</mat-error>
+      <mat-error *ngIf="password.hasError('minlength')">A jelszónak legalább 8 karakter hosszúnak kell lennie</mat-error>
+      <mat-error *ngIf="password.hasError('lessMoreSign')">A jelszó nem tartalmazhat kevesebb vagy több jelet</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Jelszó ismétlése</mat-label>
+      <input matInput type="password" placeholder="Jelszó ismétlése" formControlName="passwordRepeat">
+      <mat-error *ngIf="passwordRepeat.hasError('passwordMatch')">A jelszavak nem egyeznek</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit">Regisztráció</button>
+    <button mat-raised-button routerLink="/">Mégse</button>
+  </form>
+</div>
+<div class="jobb" appRegisterPageDirective>
+  <h1 class="cim">PepeWelery</h1>
+</div>
