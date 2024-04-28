@@ -3,10 +3,10 @@
 </div>
 <div class="jobb">
   <form class="form__group" (ngSubmit)="onLoginPressed()">
-    <div *ngIf="username.dirty" class="form-errors">
-      <p *ngIf="username.hasError('required')">Az felhasználónév megadása kötelező</p>
+    <div *ngIf="email.dirty" class="form-errors">
+      <p *ngIf="email.hasError('required')">Az email megadása kötelező</p>
     </div>
-    <input class="form__input" type="email" name="username" placeholder="Felhasználónév" [formControl]="username">
+    <input class="form__input" type="email" name="email" placeholder="Email" [formControl]="email">
 
     <div *ngIf="password.dirty" class="form-errors">
       <p *ngIf="password.hasError('required')">A jelszó megadása kötelező</p>

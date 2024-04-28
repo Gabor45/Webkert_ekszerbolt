@@ -8,7 +8,7 @@ import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 })
 export class HomePageComponent {
 
-  username = new FormControl('', {
+  email = new FormControl('', {
     validators: [Validators.required],
     nonNullable: true
   });
@@ -20,10 +20,10 @@ export class HomePageComponent {
   constructor() { }
 
   async onLoginPressed(): Promise<void> {
-    this.username.markAsDirty();
+    this.email.markAsDirty();
     this.password.markAsDirty();
 
-    if (this.username.invalid || this.password.invalid)
+    if (this.email.invalid || this.password.invalid)
       return;
 
    /* try {
