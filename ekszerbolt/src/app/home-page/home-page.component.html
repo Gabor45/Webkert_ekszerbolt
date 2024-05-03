@@ -17,7 +17,7 @@
       <p>{{ errorMessage }}</p>
     </div>
   </form>
-  <button class="custom-button" mat-raised-button>Bejelentkezés</button>
+  <button (click)="onLoginPressed()" class="custom-button" mat-raised-button>Bejelentkezés</button>
   <button mat-raised-button routerLink="register-page">Regisztráció</button>
 </div>
 

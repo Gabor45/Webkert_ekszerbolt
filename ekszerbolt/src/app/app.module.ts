@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -14,6 +13,10 @@ import { RegisterPageDirectiveDirective } from './register-page-directive.direct
 import {MatInputModule} from "@angular/material/input";
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {getAuth, provideAuth} from "@angular/fire/auth";
+import {initializeApp, provideFirebaseApp} from "@angular/fire/app";
+import {environment} from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -31,16 +34,9 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
         MatButtonModule,
         MatFormFieldModule,
         MatInputModule,
-        AngularFireModule.initializeApp({
-          apiKey: "AIzaSyBuQBBrD_EEZhwxGs5RTphlVShtFVe68DY",
-          authDomain: "webkert-ekszerbolt.firebaseapp.com",
-          projectId: "webkert-ekszerbolt",
-          storageBucket: "webkert-ekszerbolt.appspot.com",
-          messagingSenderId: "1035619733144",
-          appId: "1:1035619733144:web:26de2f93d061a6906f0aed",
-          measurementId: "G-74ZHJBVK9M"
-        }),
-      AngularFireAuthModule
+      provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+      AngularFireAuthModule,
+      provideAuth(()=> getAuth()),
     ],
   providers: [
     provideClientHydration(),

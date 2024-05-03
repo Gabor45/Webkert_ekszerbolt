@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home-page',
@@ -17,21 +18,23 @@ export class HomePageComponent {
     nonNullable: true
   });
   errorMessage: string = '';
-  constructor() { }
+
+  constructor(private authService: AuthService) { }
 
   async onLoginPressed(): Promise<void> {
     this.email.markAsDirty();
     this.password.markAsDirty();
 
+
     if (this.email.invalid || this.password.invalid)
       return;
 
-   /* try {
-      await this.auth.login(this.email.value, this.password.value);
+   try {
+      await this.authService.login(this.email.value, this.password.value);
       location.reload();
     } catch (error) {
       console.error('Error logging in, Invalid email or password:', error);
       this.errorMessage = 'Nem megfelelő e-mail cím vagy jelszó!';
-    }*/
+    }
   }
 }
