@@ -17,6 +17,7 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {getAuth, provideAuth} from "@angular/fire/auth";
 import {initializeApp, provideFirebaseApp} from "@angular/fire/app";
 import {environment} from "../environments/environment";
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {environment} from "../environments/environment";
     HomePageComponent,
     HomePageDirectiveDirective,
     RegisterPageDirectiveDirective,
+    MainPageComponent,
   ],
     imports: [
         BrowserModule,

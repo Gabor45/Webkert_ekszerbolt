@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home-page',
@@ -19,7 +20,7 @@ export class HomePageComponent {
   });
   errorMessage: string = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router : Router) { }
 
   async onLoginPressed(): Promise<void> {
     this.email.markAsDirty();
@@ -31,8 +32,9 @@ export class HomePageComponent {
 
    try {
       await this.authService.login(this.email.value, this.password.value);
-      location.reload();
-    } catch (error) {
+      alert("Sikeres belépés");
+     await this.router.navigate(['main-page']);
+   } catch (error) {
       console.error('Error logging in, Invalid email or password:', error);
       this.errorMessage = 'Nem megfelelő e-mail cím vagy jelszó!';
     }

@@ -50,14 +50,8 @@ export class AuthService {
   }
 
   async register(email: string, password: string): Promise<void> {
-    console.log("Siker");
     await createUserWithEmailAndPassword(this.auth, email, password);
   }
-
-  async loginAnonymously() {
-    return await signInAnonymously(this.auth);
-  }
-
   async logout() {
     return await signOut(this.auth);
   }

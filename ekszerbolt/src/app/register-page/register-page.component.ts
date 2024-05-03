@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormControl, ValidationErrors, ValidatorFn, Validators} from "@angular/forms";
 import {AuthService} from "../services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register-page',
@@ -36,7 +37,7 @@ export class RegisterPageComponent {
     nonNullable: true
   });
 
- constructor(private authService: AuthService) {
+ constructor(private authService: AuthService, private router: Router) {
   }
 
   async onRegisterPressed(): Promise<void> {
@@ -50,5 +51,7 @@ export class RegisterPageComponent {
       return;
 
     await this.authService.register(this.email.value,this.password.value);
+    alert("Sikeres regisztráció")
+    this.router.navigate(['/']);
   }
 }
