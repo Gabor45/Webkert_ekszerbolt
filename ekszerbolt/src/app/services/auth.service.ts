@@ -7,9 +7,8 @@ import {
   Auth,
   User,
   createUserWithEmailAndPassword,
-  onAuthStateChanged,
   signInWithEmailAndPassword,
-  signOut, authState, signInAnonymously
+  signOut, authState
 } from "@angular/fire/auth";
 import {AuthState} from "../models/auth-state";
 import {traceUntilFirst} from "@angular/fire/performance";

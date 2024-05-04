@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, OnDestroy, Output, output} from '@angular/core';
 import {FormControl, ValidationErrors, ValidatorFn, Validators} from "@angular/forms";
 import {AuthService} from "../services/auth.service";
 import {Router} from "@angular/router";
@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
   templateUrl: './register-page.component.html',
   styleUrl: './register-page.component.css'
 })
-export class RegisterPageComponent {
+export class RegisterPageComponent{
 
   fullname = new FormControl('', {
     validators: [Validators.required],
@@ -52,6 +52,6 @@ export class RegisterPageComponent {
 
     await this.authService.register(this.email.value,this.password.value);
     alert("Sikeres regisztráció")
-    this.router.navigate(['/']);
+    this.router.navigate(['']);
   }
 }
