@@ -1,0 +1,41 @@
+html,body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+.mainbutton{
+  font-size: 1.5vw;
+  width: 35vw;
+  margin-top: 2vh;
+  margin-right: 2vw;
+}
+.necklacewatch{
+  text-align: center;
+  background-color: beige;
+  height: 100vh;
+  display: flex;
+}
+.logoutbutton{
+  margin-top: 2vh;
+  font-size: 1vw;
+  margin-right: 6vw;
+}
+@media (max-height: 400px) {
+  #rotate-text{
+    margin-top: 10vh;
+    display: block;
+    font-size: 5vw;
+    transform: rotate(90deg);
+    color: white;
+    float: left;
+    background-color: black;
+  }
+}
+.mainimg{
+  display: block;
+  margin-left: 3vw;
+  width: 81%;
+}
+.feher{
+  background-color: #f8f8f8;
+}

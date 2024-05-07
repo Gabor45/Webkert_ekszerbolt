@@ -18,6 +18,8 @@ import {getAuth, provideAuth} from "@angular/fire/auth";
 import {initializeApp, provideFirebaseApp} from "@angular/fire/app";
 import {environment} from "../environments/environment";
 import { MainPageComponent } from './main-page/main-page.component';
+import { MainPageNecklaceComponent } from './main-page-necklace/main-page-necklace.component';
+import { MainPageWatchComponent } from './main-page-watch/main-page-watch.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { MainPageComponent } from './main-page/main-page.component';
     HomePageDirectiveDirective,
     RegisterPageDirectiveDirective,
     MainPageComponent,
+    MainPageNecklaceComponent,
+    MainPageWatchComponent,
   ],
     imports: [
         BrowserModule,

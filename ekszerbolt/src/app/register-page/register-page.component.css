@@ -22,10 +22,10 @@
 }
 mat-form-field{
   display: block;
-  margin-bottom: 2vh;
-  margin-left: 17.5vw;
+  margin-bottom: 3vh;
+  margin-left: 14vw;
   height: 2%;
-  width: 15vw;
+  width: 20vw;
 }
 .reg{
   text-align: center;
@@ -40,8 +40,8 @@ button{
   margin-top: 2vh;
   font-weight: bold;
   display: block;
-  margin-left: 17.5vw;
-  width: 15vw;
+  margin-left: 14vw;
+  width: 20vw;
   height: 4vh;
   margin-bottom: 2vh;
   font-size: 1vw;

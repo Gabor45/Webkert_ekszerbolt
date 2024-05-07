@@ -52,6 +52,6 @@ export class RegisterPageComponent{
 
     await this.authService.register(this.email.value,this.password.value);
     alert("Sikeres regisztráció")
-    this.router.navigate(['']);
+    await this.router.navigate(['']);
   }
 }
