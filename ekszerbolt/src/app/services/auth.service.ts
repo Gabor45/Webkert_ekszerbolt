@@ -1,6 +1,6 @@
 import {inject, Injectable, Optional} from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {EMPTY, map, Observable, Subscription} from 'rxjs';
+import {BehaviorSubject, EMPTY, map, Observable, Subscription} from 'rxjs';
 import firebase from "firebase/compat";
 import {UserData} from "../models/user-data";
 import {
@@ -19,6 +19,8 @@ import {traceUntilFirst} from "@angular/fire/performance";
 export class AuthService {
   private readonly userDisposable: Subscription|undefined;
   public readonly user: Observable<User | null> = EMPTY;
+  public isAuth = new BehaviorSubject<boolean>(false);
+
 
   showLoginButton = false;
   showLogoutButton = false;
@@ -36,7 +38,9 @@ export class AuthService {
     }
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.isAuth.next(false);
+  }
 
   ngOnDestroy(): void {
     if (this.userDisposable) {
@@ -46,12 +50,15 @@ export class AuthService {
 
   async login(email: string, password: string): Promise<void> {
     await signInWithEmailAndPassword(this.auth, email, password);
+    this.isAuth.next(true);
   }
 
   async register(email: string, password: string): Promise<void> {
     await createUserWithEmailAndPassword(this.auth, email, password);
+    this.isAuth.next(true);
   }
   async logout() {
+    this.isAuth.next(false);
     return await signOut(this.auth);
   }
 }

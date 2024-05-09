@@ -5,13 +5,14 @@ import {HomePageComponent} from "./home-page/home-page.component";
 import {MainPageComponent} from "./main-page/main-page.component";
 import { MainPageNecklaceComponent} from "./main-page-necklace/main-page-necklace.component";
 import { MainPageWatchComponent} from "./main-page-watch/main-page-watch.component";
+import {AuthGuard} from "@angular/fire/auth-guard";
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: '', component: HomePageComponent},
   { path: 'register-page', component: RegisterPageComponent },
-  { path: 'main-page', component: MainPageComponent},
-  { path: 'necklace', component: MainPageNecklaceComponent},
-  { path: 'watch', component: MainPageWatchComponent},
+  { path: 'main-page', component: MainPageComponent, canActivate: [AuthGuard]},
+  { path: 'necklace', component: MainPageNecklaceComponent, canActivate: [AuthGuard]},
+  { path: 'watch', component: MainPageWatchComponent, canActivate: [AuthGuard]},
 
 ];
 
