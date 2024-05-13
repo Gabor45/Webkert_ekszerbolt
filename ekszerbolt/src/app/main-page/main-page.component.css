@@ -18,7 +18,6 @@ html,body {
 .logoutbutton{
   margin-top: 2vh;
   font-size: 1vw;
-  margin-right: 6vw;
 }
 @media (max-height: 400px) {
   #rotate-text{
@@ -39,4 +38,9 @@ html,body {
 }
 .feher{
   background-color: #f8f8f8;
+}
+.welcome{
+  color:white;
+  font-weight: bold;
+  background-color: black;
 }

@@ -71,5 +71,8 @@ input{
   color: black;
   font-size:1vw;
 }
+#none{
+  display: none;
+}
 
 

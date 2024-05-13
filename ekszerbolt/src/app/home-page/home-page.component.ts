@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import {Router} from "@angular/router";
+import { DataService} from "../services/data.service";
 
 @Component({
   selector: 'app-home-page',
@@ -9,6 +10,8 @@ import {Router} from "@angular/router";
   styleUrl: './home-page.component.css'
 })
 export class HomePageComponent{
+
+  emailmutat:string='';
 
   email = new FormControl('', {
     validators: [Validators.required],
@@ -20,7 +23,7 @@ export class HomePageComponent{
   });
   errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router : Router) { }
+  constructor(private authService: AuthService, private router : Router, private dt:DataService) { }
 
   async onLoginPressed(): Promise<void> {
     this.email.markAsDirty();
@@ -31,6 +34,7 @@ export class HomePageComponent{
       return;
 
    try {
+      this.emailmutat=this.email.value;
       await this.authService.login(this.email.value, this.password.value);
       alert("Sikeres belépés");
      await this.router.navigate(['main-page']);
