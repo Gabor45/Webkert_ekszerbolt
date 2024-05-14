@@ -1,1 +1,17 @@
-<p>main-page-necklace works!</p>
+<div class="necklacewatch">
+  <div>
+    <button mat-raised-button routerLink="/main-page" class="logoutbutton">Vissza</button>
+
+    <button mat-raised-button (click)="logout()" class="logoutbutton">Kijelentkezés</button>
+  </div>
+  <div class="feher">
+    <img class="mainimg" src="../../assets/Images/necklace1.jpg">
+    <p class="jobbra">Név: {{name1}}</p>
+    <p class="jobbra">Ár: {{price1}}</p>
+  </div>
+  <div class="feher">
+    <img class="mainimg" src="../../assets/Images/necklace2.jpg">
+    <p class="jobbra">Név: {{name2}}</p>
+    <p class="jobbra">Ár: {{price2}}</p>
+  </div>
+</div>

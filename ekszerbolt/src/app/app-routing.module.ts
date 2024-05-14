@@ -13,11 +13,10 @@ const routes: Routes = [
   { path: 'main-page', component: MainPageComponent, canActivate: [AuthGuard]},
   { path: 'necklace', component: MainPageNecklaceComponent, canActivate: [AuthGuard]},
   { path: 'watch', component: MainPageWatchComponent, canActivate: [AuthGuard]},
-
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

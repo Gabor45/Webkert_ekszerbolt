@@ -19,17 +19,6 @@ html,body {
   margin-top: 2vh;
   font-size: 1vw;
 }
-@media (max-height: 400px) {
-  #rotate-text{
-    margin-top: 10vh;
-    display: block;
-    font-size: 5vw;
-    transform: rotate(90deg);
-    color: white;
-    float: left;
-    background-color: black;
-  }
-}
 .mainimg{
   display: block;
   margin-left: 3vw;
@@ -40,6 +29,7 @@ html,body {
   background-color: #f8f8f8;
 }
 .welcome{
+  border-radius: 5px;
   color:white;
   font-weight: bold;
   background-color: black;

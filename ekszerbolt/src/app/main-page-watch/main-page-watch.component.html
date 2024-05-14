@@ -1,1 +1,17 @@
-<p>main-page-watch works!</p>
+<div class="necklacewatch">
+  <div>
+    <button mat-raised-button routerLink="/main-page" class="logoutbutton">Vissza</button>
+
+    <button mat-raised-button (click)="logout()" class="logoutbutton">Kijelentkezés</button>
+  </div>
+  <div class="feher">
+    <img class="mainimg" src="../../assets/Images/watch1.jpg">
+    <p class="jobbra">Név: {{wname1}}</p>
+    <p class="jobbra">Ár: {{wprice1}}</p>
+  </div>
+  <div class="feher">
+    <img class="mainimg" src="../../assets/Images/watch2.jpg">
+    <p class="jobbra">Név: {{wname2}}</p>
+    <p class="jobbra">Ár: {{wprice2}}</p>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+html,body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+.necklacewatch{
+  text-align: center;
+  background-color: beige;
+  height: 100vh;
+  display: flex;
+}
+.logoutbutton{
+  margin-top: 2vh;
+  font-size: 1vw;
+}
+.mainimg{
+  display: block;
+  margin-left: 7vw;
+  width: 60%;
+  border-radius: 3vw;
+}
+.feher{
+  background-color: #f8f8f8;
+}
+.welcome{
+  border-radius: 5px;
+  color:white;
+  font-weight: bold;
+  background-color: black;
+}
+.jobbra
+{
+  font-weight: bold;
+  text-align: left;
+  margin-left: 13.5vw;
+  font-size: 1.3vw;
+}

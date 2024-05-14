@@ -37,7 +37,7 @@ export class MainPageComponent implements OnInit,OnChanges{
     if (this.regi != '') {
       this.dataUser.getUserByEmail(this.regi)
         .subscribe(userData => {
-          this.nev=userData[0].fullname
+          this.nev = userData[0].fullname;
         });
     }
   }
